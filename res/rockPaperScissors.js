@@ -16,15 +16,15 @@ class RockPaperScissors {
         this.hand = [{
             name : 'Rock',
             win  : 'Rock beats Scissors',
-            img  : './bin/rock.svg'
+            img  : './img/rock.svg'
         }, {
             name : 'Paper',
             win  : 'Paper beats Rock',
-            img  : './bin/paper.svg'
+            img  : './img/paper.svg'
         }, {
             name : 'Scissors',
             win  : 'Scissors beats Paper',
-            img  : './bin/scissors.svg'
+            img  : './img/scissors.svg'
         }];
 
         // Class Properties
@@ -207,8 +207,8 @@ class RockPaperScissors {
         this.userScore = 0;
         this.compScore = 0;
 
-        this.userDiv.innerText = 0;
-        this.compDiv.innerText = 0;
+        this.userDiv.innerText = '0';
+        this.compDiv.innerText = '0';
 
         this.gameInfo.innerText = 'First to 5 Wins';
 
