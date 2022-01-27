@@ -5,7 +5,6 @@
  * @class
  * @author  Dean Wagner <info@deanwagner.net>
  */
-
 class RockPaperScissors {
 
     /**
@@ -229,6 +228,7 @@ class RockPaperScissors {
 
     /**
      * Handle Error
+     * @param {string} message - Message Text
      */
     error(message) {
         // Hide All Sections
