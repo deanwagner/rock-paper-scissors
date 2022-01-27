@@ -38,7 +38,7 @@ class RockPaperScissors {
         // Class Elements
         this.userDiv    = document.getElementById('userScore');
         this.compDiv    = document.getElementById('compScore');
-        this.gameInfo  = document.getElementById('gameInfo');
+        this.gameInfo   = document.getElementById('gameInfo');
         this.options    = document.getElementById('options');
         this.selections = document.getElementById('selections');
         this.userStatus = document.getElementById('userStatus');
