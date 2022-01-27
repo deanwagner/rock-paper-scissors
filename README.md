@@ -1,2 +1,5 @@
-# rock-paper-scissors
-Rock Paper Scissors Game
+# Rock Paper Sscissors
+
+Rock Paper Scissors Game written in Javascript.
+
+https://deanwagner.github.io/rock-paper-scissors/
