@@ -1,4 +1,4 @@
-# Rock Paper Sscissors
+# Rock Paper Scissors
 
 Rock Paper Scissors Game written in Javascript.
 
