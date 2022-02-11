@@ -1,0 +1,28 @@
+{
+    "name"        : "Rock Paper Scissors",
+    "short_name"  : "Rock Paper Scissors",
+    "description" : "A simple Rock Paper Scissors game.",
+    "icons"       : [{
+        "src"   : "img/scissors.svg",
+        "type"  : "image/svg+xml",
+        "sizes" : "any"
+    }, {
+        "src"   : "img/scissors-192.png",
+        "type"  : "image/png",
+        "sizes" : "192x192"
+    }, {
+        "src"   : "img/scissors-512.png",
+        "type"  : "image/png",
+        "sizes" : "512x512"
+    }],
+    "start_url"        : "index.html",
+    "background_color" : "#666666",
+    "theme_color"      : "#333333",
+    "display"          : "standalone",
+    "scope"            : "/rock-paper-scissors/",
+    "screenshots"      : [{
+        "src"   : "img/rps-screenshot.png",
+        "type"  : "image/png",
+        "sizes" : "650x365"
+    }]
+}

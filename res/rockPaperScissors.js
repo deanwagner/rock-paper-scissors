@@ -33,7 +33,7 @@ class RockPaperScissors {
     userScore = 0;
     compScore = 0;
 
-    // Build Object Array For Hands
+    // Object Array For Hands
     hand = [{
         name : 'Rock',
         win  : 'Rock beats Scissors',
