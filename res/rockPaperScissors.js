@@ -28,8 +28,8 @@ class RockPaperScissors {
     // Class Properties
     hands     = 2;
     goal      = 5;
-    userHand  = null;
-    compHand  = null;
+    userHand  = -1;
+    compHand  = -1;
     userScore = 0;
     compScore = 0;
 
@@ -94,7 +94,7 @@ class RockPaperScissors {
     startRound(index) {
         // Validate User Hand
         this.userHand = parseInt(index);
-        if (!isNaN(this.userHand)) {
+        if (this.userHand >= 0 && this.userHand <= this.hands) {
             // Get Computer Hand
             this.compHand = this.getCompHand();
             // Calculate Winner
@@ -157,7 +157,7 @@ class RockPaperScissors {
      */
     userWin() {
         this.userScore++;
-        this.userDiv.innerText = this.userScore;
+        this.userDiv.innerText = this.userScore.toString();
         this.userStatus.innerText = 'YOU WIN';
         this.roundInfo.innerText = this.hand[this.userHand].win;
         this.finishRound();
@@ -168,7 +168,7 @@ class RockPaperScissors {
      */
     userLose() {
         this.compScore++;
-        this.compDiv.innerText = this.compScore;
+        this.compDiv.innerText = this.compScore.toString();
         this.userStatus.innerText = 'YOU LOSE';
         this.roundInfo.innerText = this.hand[this.compHand].win;
         this.finishRound();
@@ -222,8 +222,8 @@ class RockPaperScissors {
      * Reset the UI for New Game
      */
     resetUI() {
-        this.userHand  = null;
-        this.compHand  = null;
+        this.userHand  = -1;
+        this.compHand  = -1;
         this.userScore = 0;
         this.compScore = 0;
 
