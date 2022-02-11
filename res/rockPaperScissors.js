@@ -3,48 +3,69 @@
 /**
  * Rock Paper Scissors Game
  * @class
+ * @property {number} hands        - Number of Hands
+ * @property {number} goal         - Number of Wins
+ * @property {number} userHand     - User Hand
+ * @property {number} compHand     - CPU Hand
+ * @property {number} userScore    - User Score
+ * @property {number} compScore    - CPU Score
+ * @property {array}  hand         - Array of Hand Objects
+ * @property {object} userDiv      - User Score Element
+ * @property {object} compDiv      - CPU Score Element
+ * @property {object} gameInfo     - Game Info Element
+ * @property {object} options      - Options Element
+ * @property {object} selections   - Selections Element
+ * @property {object} userStatus   - User Status Element
+ * @property {object} roundInfo    - Round Info Element
+ * @property {object} imgUser      - User Selection Element
+ * @property {object} imgComp      - CPU Selection Element
+ * @property {object} btnNextRound - Next Round Button Element
+ * @property {object} btnGameOver  - Game Over Button Element
  * @author  Dean Wagner <info@deanwagner.net>
  */
 class RockPaperScissors {
+
+    // Class Properties
+    hands     = 2;
+    goal      = 5;
+    userHand  = null;
+    compHand  = null;
+    userScore = 0;
+    compScore = 0;
+
+    // Build Object Array For Hands
+    hand = [{
+        name : 'Rock',
+        win  : 'Rock beats Scissors',
+        img  : './img/rock.svg'
+    }, {
+        name : 'Paper',
+        win  : 'Paper beats Rock',
+        img  : './img/paper.svg'
+    }, {
+        name : 'Scissors',
+        win  : 'Scissors beats Paper',
+        img  : './img/scissors.svg'
+    }];
 
     /**
      * Constructor
      * @constructor
      */
     constructor() {
-        // Build Object Array For Hands
-        this.hand = [{
-            name : 'Rock',
-            win  : 'Rock beats Scissors',
-            img  : './img/rock.svg'
-        }, {
-            name : 'Paper',
-            win  : 'Paper beats Rock',
-            img  : './img/paper.svg'
-        }, {
-            name : 'Scissors',
-            win  : 'Scissors beats Paper',
-            img  : './img/scissors.svg'
-        }];
-
-        // Class Properties
-        this.hands     = this.hand.length - 1;
-        this.goal      = 5;
-        this.userHand  = null;
-        this.compHand  = null;
-        this.userScore = 0;
-        this.compScore = 0;
 
         // Class Elements
-        this.userDiv    = document.getElementById('userScore');
-        this.compDiv    = document.getElementById('compScore');
-        this.gameInfo   = document.getElementById('gameInfo');
-        this.options    = document.getElementById('options');
-        this.selections = document.getElementById('selections');
-        this.userStatus = document.getElementById('userStatus');
-        this.roundInfo  = document.getElementById('roundInfo');
-        this.imgUser    = document.getElementById('imgUserSelection');
-        this.imgComp    = document.getElementById('imgCompSelection');
+        this.userDiv      = document.getElementById('userScore');
+        this.compDiv      = document.getElementById('compScore');
+        this.gameInfo     = document.getElementById('gameInfo');
+        this.options      = document.getElementById('options');
+        this.selections   = document.getElementById('selections');
+        this.userStatus   = document.getElementById('userStatus');
+        this.roundInfo    = document.getElementById('roundInfo');
+        this.imgUser      = document.getElementById('imgUserSelection');
+        this.imgComp      = document.getElementById('imgCompSelection');
+        this.btnNextRound = document.getElementById('nextRound');
+        this.btnGameOver  = document.getElementById('gameOver');
 
         // Rock/Paper/Scissors Click Events
         const links = this.options.getElementsByTagName('a');
@@ -56,13 +77,11 @@ class RockPaperScissors {
         }
 
         // Next Round Button Click Event
-        this.btnNextRound = document.getElementById('nextRound');
         this.btnNextRound.addEventListener('click', () => {
             this.nextRound();
         });
 
         // Game Over Button Click Event
-        this.btnGameOver = document.getElementById('gameOver');
         this.btnGameOver.addEventListener('click', () => {
             this.resetUI();
         });
@@ -70,6 +89,7 @@ class RockPaperScissors {
 
     /**
      * Starts the Round
+     * @param {string} index - User Selection Index
      */
     startRound(index) {
         // Validate User Hand
