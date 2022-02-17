@@ -8,7 +8,7 @@ https://deanwagner.github.io/rock-paper-scissors/
 
 This project was created for the [Rock Paper Scissors assignment](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) as part of [The Odin Project](https://www.theodinproject.com) curriculum. I met all the assignment objectives as well as implemented a Responsive Design and PWA/A2HS support.
 
-### Assets Supplied
+### Provided Assets
 
 * None
 
